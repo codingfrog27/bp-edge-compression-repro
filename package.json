@@ -10,5 +10,8 @@
   },
   "dependencies": {
     "@leaningtech/browserpod": "3.5.1"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }

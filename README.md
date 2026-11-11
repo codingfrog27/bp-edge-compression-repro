@@ -17,4 +17,6 @@ content-encoding: gzip | first bytes: "# Logs\nl"
 
 The last line shows the problem: the header says gzip, but the body is plain text.
 
-Tested on 2026-11-11 with `@leaningtech/browserpod` 3.5.1 and Chrome 155.
+It's a 3.5 regression. With `@leaningtech/browserpod` 3.4.0, the same key and the same servers, `--compressed` works and the body really is gzip (it starts with `1f 8b`). The older proxy path re-compresses responses (`cdcd879`, "CF does automatically uncompress and it cannot be avoided"). The `/fetch` path that 3.5 clients use (`5dac4e5`) passes on `Content-Encoding` without re-compressing.
+
+Tested on 2026-11-11 with `@leaningtech/browserpod` 3.5.1 and 3.4.0 and Chrome 155.
