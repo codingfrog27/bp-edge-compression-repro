@@ -2,6 +2,8 @@
 
 With an API key (edge network), a request that accepts gzip gets `Content-Encoding: gzip` back, but the body is already decompressed. Clients that decode it fail: `curl --compressed` gives "incorrect header check", and Node `fetch` gives `Z_DATA_ERROR` or no result. Without an API key, all of this works.
 
+Of BrowserPod's default domains, `github.com`, `raw.githubusercontent.com` and `www.googleapis.com` are affected (tested 2026-11-11). The others don't compress their responses, so they work. Plain `curl` and `git` still reach GitHub.
+
 Run it: `npm install`, put `VITE_BP_APIKEY=<your key>` in `.env`, then `npm run dev` and open the page.
 
 Output with a key:
