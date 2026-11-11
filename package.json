@@ -1,0 +1,14 @@
+{
+  "name": "bp-edge-compression-repro",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "@leaningtech/browserpod": "3.5.1"
+  }
+}
